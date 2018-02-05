@@ -19,6 +19,28 @@ Dockerize ruby and rails app , publish and scale with K8s
 * Kubernetes: Envvars
 * Kubernetes: ConfigMaps
 
+# Tune Lab Environment (Only for minikube part)
+
+ minikube start --kubernetes-version='v1.8.0' --vm-driver=kvm
+ 
+ be sure that kubectl point to the minikube by the following command:
+ 
+ kubectl config current-context 
+ 
+ Change docker host to the minikube VM
+ 
+ ```
+ eval $(minikube docker-env)
+ ```
+ 
+ Rebuild the images in the local repo of minikube
+
+ ```
+ make minikube-image
+ ```
+ 
+
+
 # Docker-compose 
 To build,initialize postgres and run the docker-compose stack , run the following command:
 ```
